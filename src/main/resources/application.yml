@@ -4,3 +4,8 @@
 #  web:
 #    resources:
 #      static-locations: [classpath:/hehe]
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true

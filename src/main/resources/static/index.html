@@ -5,6 +5,45 @@
     <title>Title</title>
 </head>
 <body>
-<h1>trachoma, 欢迎</h1>
+<h1>Trachoma, 欢迎</h1>
+测试REST风格:
+<form action="/user" method="get">
+    <input type="submit" value="REST-GET 提交">
+</form>
+<form action="/user" method="post">
+    <input type="submit" value="REST-POST 提交">
+</form>
+<form action="/user" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_m" value="DELETE">
+    <input type="submit" value="REST-DELETE 提交">
+</form>
+<form action="/user" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="hidden" name="_m" value="PUT">
+    <input type="submit" value="REST-PUT 提交">
+</form>
+<hr>
+测试基本注解：
+<ul>
+    <a href="car/3/owner/lisi?age=18&hobby=basketball&hobby=game">car/{id}/owner/{username}</a>
+    <li>@PathVariable(路径变量)</li>
+    <li>@RequestHeader(获取请求头)</li>
+    <li>@RequestParam(获取请求参数)</li>
+    <li>@CookieValue(获取cookie值)</li>
+    <li>@RequestAttribute(获取request域属性)</li>
+    <li>@RequestBody(获取请求体)</li>
+    <li>@MatrixVariable(矩阵变量)</li>
+</ul>
+<hr>
+<form action="/save" method="post">
+    测试@RequestBody获取数据<br>
+    用户名：<input type="text" name="userName"><br>
+    邮箱：<input type="text" name="email">
+    <input type="submit" value="提交">
+</form>
+<hr>
+<a href="cars/sell;low=34;brand=byd,audi,yd">@MatrixVariable</a>
+<a href="boss/1;age=20/2;age=10">@MatrixVariable</a>
 </body>
 </html>
