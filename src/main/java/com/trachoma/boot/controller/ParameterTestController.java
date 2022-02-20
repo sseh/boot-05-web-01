@@ -1,5 +1,6 @@
 package com.trachoma.boot.controller;
 
+import com.trachoma.boot.bean.Person;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -12,6 +13,12 @@ import java.util.Map;
  */
 @RestController
 public class ParameterTestController {
+
+    @PostMapping("/saveUser")
+    public Person saveUser(Person person) {
+
+        return person;
+    }
 
     @GetMapping("/car/{id}/owner/{username}")
     public Map<String, Object> getCar(@PathVariable("id") Integer id,
